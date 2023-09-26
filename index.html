@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Responsive Centered Table</title>
+    <style>
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightyellow;
+        }
+
+        tr:nth-child(n+2) {
+            background-color: lightblue;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>سرمایه اولیه</th>
+            <th>مقدار ریسک به درصد</th>
+            <th>مقدار ریسک به دلار</th>
+            <th>قیمت ورود</th>
+            <th>قیمت استاپ</th>
+            <th>حجم ورود</th>
+        </tr>
+        <!-- Row 1 -->
+        <tr>
+            <td><input type="number" id="initialCapital1" oninput="calculateRow(1)" /></td>
+            <td><input type="number" id="riskPercent1" value="0" oninput="calculateRow(1)" /></td>
+            <td><span id="riskAmountDollar1">0</span></td>
+            <td><input type="number" id="entryPrice1" oninput="calculateRow(1)" /></td>
+            <td><input type="number" id="stopPrice1" oninput="calculateRow(1)" /></td>
+            <td><span id="entryVolume1">0</span></td>
+        </tr>
+        <!-- Row 2 -->
+        <tr>
+            <td><input type="number" id="initialCapital2" oninput="calculateRow(2)" /></td>
+            <td><input type="number" id="riskPercent2" value="0" oninput="calculateRow(2)" /></td>
+            <td><span id="riskAmountDollar2">0</span></td>
+            <td><input type="number" id="entryPrice2" oninput="calculateRow(2)" /></td>
+            <td><input type="number" id="stopPrice2" oninput="calculateRow(2)" /></td>
+            <td><span id="entryVolume2">0</span></td>
+        </tr>
+        <!-- Add more rows here -->
+        <tr>
+            <td><input type="number" id="initialCapital3" oninput="calculateRow(3)" /></td>
+            <td><input type="number" id="riskPercent3" value="0" oninput="calculateRow(3)" /></td>
+            <td><span id="riskAmountDollar3">0</span></td>
+            <td><input type="number" id="entryPrice3" oninput="calculateRow(3)" /></td>
+            <td><input type="number" id="stopPrice3" oninput="calculateRow(3)" /></td>
+            <td><span id="entryVolume3">0</span></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="initialCapital4" oninput="calculateRow(4)" /></td>
+            <td><input type="number" id="riskPercent4" value="0" oninput="calculateRow(4)" /></td>
+            <td><span id="riskAmountDollar4">0</span></td>
+            <td><input type="number" id="entryPrice4" oninput="calculateRow(4)" /></td>
+            <td><input type="number" id="stopPrice4" oninput="calculateRow(4)" /></td>
+            <td><span id="entryVolume4">0</span></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="initialCapital5" oninput="calculateRow(5)" /></td>
+            <td><input type="number" id="riskPercent5" value="0" oninput="calculateRow(5)" /></td>
+            <td><span id="riskAmountDollar5">0</span></td>
+            <td><input type="number" id="entryPrice5" oninput="calculateRow(5)" /></td>
+            <td><input type="number" id="stopPrice5" oninput="calculateRow(5)" /></td>
+            <td><span id="entryVolume5">0</span></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="initialCapital6" oninput="calculateRow(6)" /></td>
+            <td><input type="number" id="riskPercent6" value="0" oninput="calculateRow(6)" /></td>
+            <td><span id="riskAmountDollar6">0</span></td>
+            <td><input type="number" id="entryPrice6" oninput="calculateRow(6)" /></td>
+            <td><input type="number" id="stopPrice6" oninput="calculateRow(6)" /></td>
+            <td><span id="entryVolume6">0</span></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="initialCapital7" oninput="calculateRow(7)" /></td>
+            <td><input type="number" id="riskPercent7" value="0" oninput="calculateRow(7)" /></td>
+            <td><span id="riskAmountDollar7">0</span></td>
+            <td><input type="number" id="entryPrice7" oninput="calculateRow(7)" /></td>
+            <td><input type="number" id="stopPrice7" oninput="calculateRow(7)" /></td>
+            <td><span id="entryVolume7">0</span></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="initialCapital8" oninput="calculateRow(8)" /></td>
+            <td><input type="number" id="riskPercent8" value="0" oninput="calculateRow(8)" /></td>
+            <td><span id="riskAmountDollar8">0</span></td>
+            <td><input type="number" id="entryPrice8" oninput="calculateRow(8)" /></td>
+            <td><input type="number" id="stopPrice8" oninput="calculateRow(8)" /></td>
+            <td><span id="entryVolume8">0</span></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="initialCapital9" oninput="calculateRow(9)" /></td>
+            <td><input type="number" id="riskPercent9" value="0" oninput="calculateRow(9)" /></td>
+            <td><span id="riskAmountDollar9">0</span></td>
+            <td><input type="number" id="entryPrice9" oninput="calculateRow(9)" /></td>
+            <td><input type="number" id="stopPrice9" oninput="calculateRow(9)" /></td>
+            <td><span id="entryVolume9">0</span></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="initialCapital10" oninput="calculateRow(10)" /></td>
+            <td><input type="number" id="riskPercent10" value="0" oninput="calculateRow(10)" /></td>
+            <td><span id="riskAmountDollar10">0</span></td>
+            <td><input type="number" id="entryPrice10" oninput="calculateRow(10)" /></td>
+            <td><input type="number" id="stopPrice10" oninput="calculateRow(10)" /></td>
+            <td><span id="entryVolume10">0</span></td>
+        </tr>
+    </table>
+
+    <script>
+        class RiskCalculator {
+            constructor(rowNumber) {
+                this.rowNumber = rowNumber;
+            }
+
+            calculate() {
+                const initialCapital = parseFloat(document.getElementById(`initialCapital${this.rowNumber}`).value);
+                const riskPercent = parseFloat(document.getElementById(`riskPercent${this.rowNumber}`).value);
+                const entryPrice = parseFloat(document.getElementById(`entryPrice${this.rowNumber}`).value);
+                const stopPrice = parseFloat(document.getElementById(`stopPrice${this.rowNumber}`).value);
+
+                const riskAmountDollar = (riskPercent / 100) * initialCapital;
+                const entryVolume = riskAmountDollar / (entryPrice - stopPrice);
+
+                document.getElementById(`riskAmountDollar${this.rowNumber}`).textContent = riskAmountDollar.toFixed(2);
+                document.getElementById(`entryVolume${this.rowNumber}`).textContent = entryVolume.toFixed(2);
+            }
+        }
+
+        function calculateRow(rowNumber) {
+            const calculator = new RiskCalculator(rowNumber);
+            calculator.calculate();
+        }
+    </script>
+</body>
+
+</html>
